@@ -107,9 +107,7 @@ string stringmult(string a, string b){
 string rangemult(int l, int r){
     string ans="1";
     for(int i=l;i<=r;i++){
-        string ss = "";
-        ss.push_back(i+'0');
-        ans = stringmult(ans, ss);
+        ans = stringmult(ans, to_string(i));
     }
 
     return ans;
@@ -130,6 +128,10 @@ string solve(int n, int m){
 int32_t main(){
 
     int n,m;cin>>n>>m;
+    if(n+m==1){
+        cout<<"0"<<endl;
+        return 0;
+    }
     cout<<solve(n,m)<<endl;
 
     return 0;
